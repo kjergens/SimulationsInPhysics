@@ -1,7 +1,7 @@
 /*
  * Open Source Physics software is free software as described near the bottom of this code file.
  *
- * For additional information and documentation on Open Source Physics please see: 
+ * For additional information and documentation on Open Source Physics please see:
  * <http://www.opensourcephysics.org/>
  */
 
@@ -15,33 +15,36 @@ package org.opensourcephysics.sip.ch02;
  */
 public class FallingBallApp { // beginning of class definition
 
-  /**
-   * Starts the Java application.
-   * @param args  command line parameters
-   */
-  public static void main(String[] args) { // beginning of method definition
-    FallingBall ball = new FallingBall(); // declaration and instantiation
-    double y0 = 10;                       // example of declaration and assignment statement
-    double v0 = 0;
-    ball.t = 0; // note use of dot operator to access instance variable
-    ball.dt = 0.01;
-    ball.y = y0;
-    ball.v = v0;
-    while(ball.y>0) {
-      ball.step();
-    }
-    System.out.println("Results");
-    System.out.println("final time = "+ball.t);
-    // displays numerical results
-    System.out.println("y = "+ball.y+" v = "+ball.v);
-    // displays analytic results
-    System.out.println("analytic y = "+ball.analyticPosition(y0, v0));
-    System.out.println("analytic v = "+ball.analyticVelocity(v0));
-    System.out.println("acceleration = "+FallingBall.g);
-  } // end of method definition
+    /**
+     * Starts the Java application.
+     *
+     * @param args command line parameters
+     */
+    public static void main(String[] args) { // beginning of method definition
+        FallingBall ball = new FallingBall(); // declaration and instantiation
+        double y0 = 10;                       // example of declaration and assignment statement
+        double v0 = 0;
+        ball.t = 0; // note use of dot operator to access instance variable
+        ball.dt = 0.01;
+        ball.y = y0;
+        ball.v = v0;
+
+        while (ball.y > 0) {
+            ball.step();
+        }
+
+        System.out.println("Results");
+        System.out.println("final time = " + ball.t);
+        // displays numerical results
+        System.out.println("y = " + ball.y + " v = " + ball.v);
+        // displays analytic results
+        System.out.println("analytic y = " + ball.analyticPosition(y0, v0));
+        System.out.println("analytic v = " + ball.analyticVelocity(v0));
+        System.out.println("acceleration = " + FallingBall.g);
+    } // end of method definition
 } // end of class definition
 
-/* 
+/*
  * Open Source Physics software is free software; you can redistribute
  * it and/or modify it under the terms of the GNU General Public License (GPL) as
  * published by the Free Software Foundation; either version 2 of the License,
